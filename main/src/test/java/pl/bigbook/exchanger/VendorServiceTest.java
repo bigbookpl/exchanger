@@ -8,6 +8,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import pl.bigbook.exchanger.services.VendorService;
 
+import javax.inject.Inject;
+
 /**
  * Created with IntelliJ IDEA.
  * User: brutus
@@ -20,12 +22,15 @@ public class VendorServiceTest implements ApplicationContextAware {
 
     private ApplicationContext appCtx;
 
+    @Inject
+    VendorService vendorService;
+
     @Before
     public void setUp() throws Exception {
     }
 
     @Test
-    public void addVendorTest(){
+    public void addVendorTest() {
         //given
         Vendor vendor = new Vendor();
 
@@ -37,7 +42,7 @@ public class VendorServiceTest implements ApplicationContextAware {
         Vendor resultVendor = null;
 
         try {
-            resultVendor = VendorService.AddNewVendor(vendor);
+            resultVendor = vendorService.addNewVendor(vendor);
         } catch (Exception e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }

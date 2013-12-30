@@ -11,6 +11,7 @@ public class Vendor {
     private String uniqueName;
     private String url;
     private String name;
+    private int id;
 
     public Vendor(Object p0) {
     }
@@ -41,5 +42,13 @@ public class Vendor {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
