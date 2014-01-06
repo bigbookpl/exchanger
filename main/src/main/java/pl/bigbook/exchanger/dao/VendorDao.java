@@ -1,5 +1,6 @@
 package pl.bigbook.exchanger.dao;
 
+import org.springframework.dao.DataAccessException;
 import pl.bigbook.exchanger.Vendor;
 
 /**
@@ -11,5 +12,5 @@ import pl.bigbook.exchanger.Vendor;
  */
 public interface VendorDao {
 
-    public Vendor addVendor(Vendor vendor);
+    public Vendor addVendor(Vendor vendor) throws DataAccessException;
 }

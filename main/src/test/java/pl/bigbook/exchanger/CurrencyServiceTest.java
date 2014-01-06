@@ -2,7 +2,7 @@ package pl.bigbook.exchanger;
 
 import org.junit.Assert;
 import org.junit.Before;
-import pl.bigbook.exchanger.services.CurrencyService;
+import pl.bigbook.exchanger.services.CurrencyServiceImpl;
 import pl.bigbook.exchanger.services.PairService;
 import pl.bigbook.exchanger.services.VendorServiceImpl;
 
@@ -27,7 +27,7 @@ public class CurrencyServiceTest {
 
 
         //when
-        CurrencyRate currencyRate = CurrencyService.getLastCurrencyRateForVendor(vendor, pair);
+        CurrencyRate currencyRate = CurrencyServiceImpl.getLastCurrencyRateForVendor(vendor, pair);
 
         //then
         Assert.assertEquals("message", "EURPLN", currencyRate.getPair());
