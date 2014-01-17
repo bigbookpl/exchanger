@@ -1,7 +1,10 @@
-package pl.bigbook.exchanger;
+package pl.bigbook.exchanger.services;
 
 import org.junit.Assert;
 import org.junit.Before;
+import pl.bigbook.exchanger.CurrencyRate;
+import pl.bigbook.exchanger.Pair;
+import pl.bigbook.exchanger.Vendor;
 import pl.bigbook.exchanger.services.CurrencyServiceImpl;
 import pl.bigbook.exchanger.services.PairService;
 import pl.bigbook.exchanger.services.VendorServiceImpl;
@@ -35,5 +38,8 @@ public class CurrencyServiceTest {
         Assert.assertEquals("message", "2.0000", currencyRate.getRate());
     }
 
+    public void updateExchangeRate(){
+
+    }
 
 }

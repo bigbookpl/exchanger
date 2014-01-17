@@ -1,4 +1,4 @@
-package pl.bigbook.exchanger;
+package pl.bigbook.exchanger.services;
 
 import junit.framework.Assert;
 import org.junit.Before;
@@ -11,6 +11,7 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import pl.bigbook.exchanger.Vendor;
 import pl.bigbook.exchanger.services.VendorService;
 
 import javax.inject.Inject;

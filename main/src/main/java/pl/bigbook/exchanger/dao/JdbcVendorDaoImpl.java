@@ -11,6 +11,7 @@ import java.util.Map;
 public class JdbcVendorDaoImpl extends SimpleJdbcDaoSupport implements VendorDao {
 
     private static final String SQL_INSERT_VENDOR = "INSERT INTO vendor(uniquename,url,name) VALUES(:uniqueName,:url,:name)";
+    public static final String SQL_SELECT_VENDOR_BY_UNIQUENAME = "SELECT * FROM vendor WHERE uniquename = :uniquename";
 
     @Override
     public Vendor addVendor(Vendor vendor) {
@@ -21,4 +22,13 @@ public class JdbcVendorDaoImpl extends SimpleJdbcDaoSupport implements VendorDao
         getSimpleJdbcTemplate().update(SQL_INSERT_VENDOR, namedQueryParams);
         return vendor;
     }
+
+    public Vendor getVendorByUniqueName(String uniqueName){
+        Map<String, String> namedQueryParams = new HashMap<String, String>();
+        namedQueryParams.put("uniqueName", uniqueName);
+        Vendor findedVendor = getSimpleJdbcTemplate().queryForObject(SQL_SELECT_VENDOR_BY_UNIQUENAME, Vendor.class, namedQueryParams);
+        return findedVendor;
+    }
+
+
 }
