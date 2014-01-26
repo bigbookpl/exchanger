@@ -2,32 +2,34 @@ package pl.bigbook.exchanger.services;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import pl.bigbook.exchanger.CurrencyRate;
 import pl.bigbook.exchanger.Pair;
 import pl.bigbook.exchanger.Vendor;
-import pl.bigbook.exchanger.services.CurrencyServiceImpl;
-import pl.bigbook.exchanger.services.PairService;
-import pl.bigbook.exchanger.services.VendorServiceImpl;
 
-
+/**
+ * Unit Tests for CurrencyService
+ */
+@ContextConfiguration(locations = "classpath:META-INF/spring/AppContext.xml")
+@RunWith(SpringJUnit4ClassRunner.class)
 public class CurrencyServiceTest {
 
 
     @Before
-    public void setUp() {
-
-    }
+    public void setUp() {}
 
 
-    public void getLastCurrencyRateForVendor() {
+    public void getLastCurrencyRateForVendorTest() {
 
         //given
         VendorServiceImpl vendorServiceImpl = new VendorServiceImpl();
         Vendor vendor = vendorServiceImpl.getVendorById(1);
 
         PairService pairService = new PairService();
+        //@todo change to currency type
         Pair pair = pairService.getPairById(1);
-
 
         //when
         CurrencyRate currencyRate = CurrencyServiceImpl.getLastCurrencyRateForVendor(vendor, pair);

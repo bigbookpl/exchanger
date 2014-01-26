@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+       <!--xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+       <!--xmlns:context="http://www.springframework.org/schema/context"-->
+       <!--xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">-->
 
-    <context:annotation-config/>
-    <context:component-scan base-package="pl.bigbook.exchanger"/>
+    <!--<context:annotation-config/>-->
+    <!--<context:component-scan base-package="pl.bigbook.exchanger"/>-->
 
-    <bean class="pl.bigbook.exchanger.Pair" scope="prototype"/>
-    <bean class="pl.bigbook.exchanger.Vendor" scope="prototype"/>
-    <bean class="pl.bigbook.exchanger.CurrencyRate" scope="prototype"/>
+    <!--<bean class="pl.bigbook.exchanger.Pair" scope="prototype"/>-->
+    <!--<bean class="pl.bigbook.exchanger.Vendor" scope="prototype"/>-->
+    <!--<bean class="pl.bigbook.exchanger.CurrencyRate" scope="prototype"/>-->
 
 
-    <bean id="datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-        <property name="driverClass" value="org.hsqldb.jdbcDriver"/>
-        <property name="jdbcUrl" value="jdbc:hsqldb:file:c/mydb;create=true"/>
-    </bean>
+    <!--<bean id="datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource">-->
+        <!--<property name="driverClass" value="org.hsqldb.jdbcDriver"/>-->
+        <!--<property name="jdbcUrl" value="jdbc:hsqldb:file:c/mydb;create=true"/>-->
+    <!--</bean>-->
 
-</beans>
+<!--</beans>-->

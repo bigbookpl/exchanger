@@ -17,11 +17,7 @@ import pl.bigbook.exchanger.services.VendorService;
 import javax.inject.Inject;
 
 /**
- * Created with IntelliJ IDEA.
- * User: brutus
- * Date: 28.12.13
- * Time: 23:47
- * To change this template use File | Settings | File Templates.
+ * Unit Tests for Vendor Service
  */
 @ContextConfiguration(locations = "classpath:META-INF/spring/AppContext.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -34,36 +30,39 @@ public class VendorServiceTest {
 
     @Before
     public void setUp() throws Exception {
-//        ApplicationContext context = new ClassPathXmlApplicationContext("META-INF/spring/AppContext.xml");
-//        vendorService = context.getBean(VendorService.class);
     }
 
     @Test
     public void addVendorTest() {
         //given
-        Vendor vendor = new Vendor();
-        vendor.setName("Walutomat");
-        vendor.setUniqueName("WALUTOMAT");
-        vendor.setUrl("http://www.walutomat.pl");
+        final String vendorName = "Narodowy Bank Polski";
+        final String uniqueName = "NBP";
+        final String url = "http://www.nbp.pl";
 
-        //when
+        Vendor vendor = new Vendor();
+        vendor.setName(vendorName);
+        vendor.setUniqueName(uniqueName);
+        vendor.setUrl(url);
+
         try {
+            //when
             Vendor resultVendor = vendorService.addNewVendor(vendor);
             //then
-            Assert.assertEquals("message", "Walutomat", resultVendor.getName());
-            Assert.assertEquals("message", "WALUTOMAT", resultVendor.getUniqueName());
-            Assert.assertEquals("message", "http://www.walutomat.pl", resultVendor.getUrl());
+            Assert.assertEquals("message", vendorName, resultVendor.getName());
+            Assert.assertEquals("message", uniqueName, resultVendor.getUniqueName());
+            Assert.assertEquals("message", url, resultVendor.getUrl());
         } catch (Exception e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            e.printStackTrace();
         }
-
     }
 
     public VendorService getVendorService() {
+        //@todo need to impl.
         return vendorService;
     }
 
     public void setVendorService(VendorService vendorService) {
+        //@todo need to impl.
         this.vendorService = vendorService;
     }
 

@@ -19,7 +19,7 @@
     <bean class="pl.bigbook.exchanger.Vendor" scope="prototype"/>
     <bean class="pl.bigbook.exchanger.CurrencyRate" scope="prototype"/>
 
-<!-- services -->
+    <!-- services -->
     <bean class="pl.bigbook.exchanger.services.VendorServiceImpl" id="service"/>
 
 </beans>
